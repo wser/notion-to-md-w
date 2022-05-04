@@ -1,19 +1,35 @@
 <script setup>
 import { NotionRenderer, getPageBlocks } from "vue3-notion"
-import { ref, onMounted } from "vue"
+import { ref, onMounted, onErrorCaptured } from "vue"
+
+const error = ref(null);
+onErrorCaptured(e => {
+  error.value = e
+  return true
+})
+
+
 
 const data = ref()
 
-onMounted(async () => {
-  //data.value = await getPageBlocks("71e464117a774d8c8e2d03384172173f")
-  //data.value = await getPageBlocks(import.meta.env.NOTION_PAGE)
-  data.value = await getPageBlocks(import.meta.env.VITE_NOTION_PAGE)
+const content = async () =>  data.value = await getPageBlocks(import.meta.env.VITE_NOTION_PAGE)
 
-})
+onMounted(content)
+
 </script>
 
 <template>
-  <NotionRenderer v-if="data" :blockMap="data" fullPage />
+<div v-if="error">
+   {{ error }}
+  </div>
+  <Suspense v-else>
+    <template #default>
+      <NotionRenderer v-if="data" :blockMap="data" fullPage />
+    </template>
+    <template #fallback>
+      <div>Loading...</div>
+    </template>
+  </Suspense>
 </template>
 
 <style>
