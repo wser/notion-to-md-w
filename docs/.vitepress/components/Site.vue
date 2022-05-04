@@ -6,19 +6,21 @@
 </template>
 
 <script setup>
-import { Client } from '@notionhq/client';
-import { NotionToMarkdown } from 'notion-to-md';
+// import { Client } from '@notionhq/client';
+// import { NotionToMarkdown } from 'notion-to-md';
 
-const notion = new Client({
-  auth: 'secret_nvWqCSZIz47YY2ig6Uw3MyeKyNv8TMOs6ZnDyim0SZa',
-});
+// const notion = new Client({
+//   auth: import.meta.env.VITE_NOTION_API_KEY,
+// });
 
-// passing notion client to the option
-const n2m = new NotionToMarkdown({ notionClient: notion });
+// // passing notion client to the option
+// const n2m = new NotionToMarkdown({ notionClient: notion });
 
-(async () => {
-  // notice second argument, totalPage.
-  const x = await n2m.pageToMarkdown('71e464117a774d8c8e2d03384172173f', 1);
-  console.log(x);
-})();
+// (async () => {
+//   // notice second argument, totalPage.
+//   const x = await n2m.pageToMarkdown(import.meta.env.VITE_NOTION_PAGE, 1);
+//   console.log(x);
+// })();
+
+
 </script>
