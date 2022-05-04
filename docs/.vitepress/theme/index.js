@@ -1,5 +1,5 @@
 import Theme from 'vitepress/theme';
-import NotionSite from '../components/NOtionSite.vue';
+import NotionSite from '../components/NotionSite.vue';
 
 export default {
   ...Theme,
