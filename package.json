@@ -1,5 +1,5 @@
 {
-  "name": "notion-to-md",
+  "name": "notion-to-vitepress",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,8 +14,6 @@
     "vitepress": "^0.22.3"
   },
   "dependencies": {
-    "@notionhq/client": "^1.0.4",
-    "notion-to-md": "^2.3.2",
     "vue3-notion": "^0.1.33"
   }
 }
