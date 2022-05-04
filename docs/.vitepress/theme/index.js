@@ -1,10 +1,10 @@
 import Theme from 'vitepress/theme';
-import Site from '../components/Site.vue';
+import NotionSite from '../components/NOtionSite.vue';
 
 export default {
   ...Theme,
 
   enhanceApp({ app }) {
-    app.component('Site', Site);
+    app.component('NotionSite', NotionSite);
   },
 };

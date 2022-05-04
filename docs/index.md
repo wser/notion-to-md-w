@@ -1,3 +1,3 @@
 # Notion Docs
 
-<Site />
+<NotionSite />
