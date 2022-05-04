@@ -1,4 +1,4 @@
+import 'dotenv/config';
 module.exports = {
-  title: 'Hello W',
-  description: 'Just playing around.',
+  title: 'w',
 };

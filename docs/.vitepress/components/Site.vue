@@ -1,26 +1,21 @@
-<template>
-<div>
+<script setup>
+import { NotionRenderer, getPageBlocks } from "vue3-notion"
+import { ref, onMounted } from "vue"
 
-  Hello VitePress W
-</div>
+const data = ref()
+
+onMounted(async () => {
+  //data.value = await getPageBlocks("71e464117a774d8c8e2d03384172173f")
+  //data.value = await getPageBlocks(import.meta.env.NOTION_PAGE)
+  data.value = await getPageBlocks(import.meta.env.VITE_NOTION_PAGE)
+
+})
+</script>
+
+<template>
+  <NotionRenderer v-if="data" :blockMap="data" fullPage />
 </template>
 
-<script setup>
-// import { Client } from '@notionhq/client';
-// import { NotionToMarkdown } from 'notion-to-md';
-
-// const notion = new Client({
-//   auth: import.meta.env.VITE_NOTION_API_KEY,
-// });
-
-// // passing notion client to the option
-// const n2m = new NotionToMarkdown({ notionClient: notion });
-
-// (async () => {
-//   // notice second argument, totalPage.
-//   const x = await n2m.pageToMarkdown(import.meta.env.VITE_NOTION_PAGE, 1);
-//   console.log(x);
-// })();
-
-
-</script>
+<style>
+@import "vue3-notion/dist/style.css"; /* optional Notion-like styles */
+</style>
