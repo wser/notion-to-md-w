@@ -4,11 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "vitepress": "^0.22.3"
+  },
+  "dependencies": {
+    "@notionhq/client": "^1.0.4",
+    "notion-to-md": "^2.3.2"
   }
 }
